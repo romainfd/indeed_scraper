@@ -14,8 +14,8 @@ const queryOptions = {
     // limit: 100
 };
 
-// "AWS", "GCP", "Azure", "Scaleway"
-["python", "java", "node.js"].forEach(csp => {
+// "AWS", "GCP", "Azure", "Scaleway", "python", "java", "node.js"
+["AWS", "GCP", "Azure", "Scaleway"].forEach(csp => {
     consola.info("Running indeed-scraper for " + csp)
     queryOptions['query'] = csp === "java" ? "java -javascript" : csp
     indeed.query(queryOptions).then(async jobs => {
